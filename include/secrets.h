@@ -1,15 +1,15 @@
 #pragma once
 
 // Дані для Telegram бота (створити через BotFather)
-#define TG_BOT_TOKEN "8452307846:AAFndCi2IKpibaWtSZMQr43N8Cv3eZQ0p1Q"
+#define TG_BOT_TOKEN "977132350:AAEjOLsbIapsRzOUACPC_P61wM5VoaCCiQo"
 // ID вашого особистого чату або групи (цілочисельне)
-#define TG_CHAT_ID   "232809905"
+#define TG_CHAT_ID   "432217217"
 
 // Ім’я GitHub-репо у форматі owner/repo
-#define GH_REPO "dz-vadim/KomandaMeetUpEsp32OTATelegram"
+#define GH_REPO "waylander11/esp32-OTA-updates-"
 // Ім’я файлу прошивки, який викладається у реліз
 #define GH_FW_FILENAME "firmware.bin"
 
 // (опц.) мітка для WiFiManager AP
-#define WM_AP_NAME "ESP32-Setup"
+#define WM_AP_NAME "ESP32-ANTON"
 #define WM_AP_PASS ""   // залиште порожнім = без пароля

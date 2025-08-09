@@ -16,7 +16,7 @@ static String ghLatestReleaseUrl() {
 }
 
 bool doOTAFromLatestRelease() {
-  showUpdating();
+  lcdShow("Updating...", "Please wait"); 
 
   WiFiClientSecure client; 
   client.setInsecure();
@@ -29,17 +29,17 @@ bool doOTAFromLatestRelease() {
 
   switch (ret) {
     case HTTP_UPDATE_OK:
-      showUpdateDone(true);
-      return true; // пристрій перезавантажиться автоматично
+      lcdShow("Update OK", "Rebooting...");  // was showUpdateDone(true)
+      return true;
     case HTTP_UPDATE_NO_UPDATES:
       sendTelegram("No updates available.");
       break;
     case HTTP_UPDATE_FAILED:
     default:
-      sendTelegram(String("Update failed: ") + httpUpdate.getLastErrorString());
+      lcdShow("Update FAIL", httpUpdate.getLastErrorString()); // was showUpdateDone(false)
       break;
   }
-  showUpdateDone(false);
+
   delay(3000);
   return false;
 }
